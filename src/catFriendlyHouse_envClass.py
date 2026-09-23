@@ -49,16 +49,16 @@ class catFriendlyHouse2_env(environmentPro):
   
   #Return all agants exactly at a given location
   def list_agents_at(self, location, thingClass=Thing):
-    return [agent for agent in self.agents if agent.location == location and isinstance(agent, thingClass)]
+      #your code here
+      pass
     
   
 
   def percept(self, agent):
     #return a list of things AND a list of agents that are in our agent's location
-    #Cat Agent program must be updated to process 3 items from its perception
-    things = self.list_things_at(agent.location)
-    agents = self.list_agents_at(agent.location)
-    return agent.location, things, agents
+    #your code here
+    pass
+    #return agent.location, things, agents
   
 
   def add_thing(self, thing, location=None): # improved  
@@ -86,67 +86,22 @@ class catFriendlyHouse2_env(environmentPro):
       if isinstance(agent, proCatAgent) and len(self.agents+self.things)>0:
         print("Some items are still there ....")
         if action=='Go ahead':
-          print("The Agent decided to {} at location: {}".format(action,agent.location))
-          if agent.direction==True:
-            agent.location=self.locations[self.locations.index(agent.location)+1]
-          else:
-            agent.location=self.locations[self.locations.index(agent.location)-1]
-          agent.performance -= 5
-          self.update_agent_alive(agent)
+          #your code here
+          pass
           
 
         elif action=='Catch':
-          items = self.list_agents_at(agent.location, thingClass=MouseAgent)
-          if items: 
-            target_mouse = items[0]
-            if agent.performance>target_mouse.performance*5:
-              #a cat caught a mouse -> remove Mouse Agent form agents list
-              self.delete_thing(target_mouse)
-              agent.performance += 10
-              self.update_agent_alive(agent)
-              print("The Agent did {} {} at location: {}".format(action,target_mouse,agent.location))
-              print("There is nothing for Agent Cat here. Done!")
-              agent.alive=False
-
-            else:
-              #a cat tried but a mouse run away
-              agent.performance -= 10
-              self.update_agent_alive(agent)
-              print("The Agent tried to {} {} at location: {}, but failed.".format(action,items[0],agent.location))
-          else:
-            print(f"Agent tried to {action}, but no MouseAgent was found at {agent.location}.")
+          #your code here
+          pass
         
         elif action=='Check direction':
-          print("The Agent decided to {} at location: {}".format(action,agent.location))
-          if agent.location==loc_A and not agent.direction:
-            agent.changeDirection()
-
-          if agent.location==loc_D and agent.direction:
-            agent.changeDirection()
-          
-          #print(agent.direction)
-          if agent.direction==True:
-            agent.location=self.locations[self.locations.index(agent.location)+1]
-          else:
-            agent.location=self.locations[self.locations.index(agent.location)-1]
-          agent.performance -= 5
-          self.update_agent_alive(agent)
-
-        elif action=='Stop':
-          print("There is nothing for Agent Cat here. Done!")
-          agent.alive=False
+          #your code here
+          pass
           
 
       elif isinstance(agent, MouseAgent):
-        print(f"the Agent Mouse is still running with a performance {agent.performance}")
-        agent.location=action
-        print("The Agent Mouse decided to move to {}".format(agent.location))
-        #items = self.list_agents_at(agent.location, thingClass=MouseAgent)
-        #self.delete_thing(items[0])
-        agent.performance -= 1
-        self.update_agent_alive(agent)
-        #self.add_thing(agent,agent.location)
-        #print(self.agents)
+        #your code here
+        pass
 
       else:
           print("There is nothing for Agent Cat here. Done!")

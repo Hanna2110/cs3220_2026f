@@ -36,11 +36,11 @@ def ReflexAgentA3pro():#cat Agent
     #your code here for the Task2
 
 
-def RandomMouseAgent():
+def RandomMouseAgent(): #for the Task3
     return MouseAgent(RandomAgentProgram(mouseAgentLocations))
 
 
-def ReflexAgentA4pro():#cat Agent for mouse Agent
+def ReflexAgentA4pro():#cat Agent for mouse Agent - task3
     return proCatAgent(ReflexAgentProgram(cat2Rules,interpret_input_A4pro,rule_match))
     
 

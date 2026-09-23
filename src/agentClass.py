@@ -36,22 +36,18 @@ directions={
 class proCatAgent(Agent):
 
     def __init__(self, program=None):
-        super().__init__(program)
-        #True: form Left to Right
-        self.direction = True
-        self.performance=30
-        print(f"ProAgent-Cat will move {directions[self.direction]} with a performance {self.performance}")
+         #your code here
+         pass
 
     def changeDirection(self):
-        self.direction = not(self.direction)
-        print(f"ProAgent-Cat will move {directions[self.direction]}")
+        #your code here
+        pass
 
 
 class MouseAgent(Agent):
     def __init__(self, program=None, size=1):
-        super().__init__(program)
-        self.size=size
-        self.performance=self.size*5
-        print(f"Mouse Agent has a performance {self.performance}")
+        #your code here
+        pass
+        
         
 

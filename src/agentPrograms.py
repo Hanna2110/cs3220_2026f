@@ -91,11 +91,7 @@ def interpret_input_A4pro(percept):
   loc, agents,things = percept
   percepts=agents+things
   print(percepts)
-  status='Clear'
-
-  #if len(percepts)<=1:    
-      #status='Done'
-     
+  status='Clear'     
   
   for p in percepts:
       if isinstance(p, MouseAgent):
@@ -105,7 +101,6 @@ def interpret_input_A4pro(percept):
   if status=='Clear':
     if loc==loc_D or loc==loc_A:
       status='Last room'
-
 
 
   print(f"Loc: {loc}, status: {status}")
